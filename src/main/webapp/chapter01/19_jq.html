@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<script src="../script/jquery-3.7.1.min.js"></script>
+<script>
+	
+	 $(document).ready(function () {
+		 $("#out").click(function(){
+			$("img").fadeOut("slow"); 
+		 });
+		 
+		 $("#in").click(function(){
+			$("img").fadeIn("slow"); 
+		 });
+		 
+		 $("#toggle").click(function(){
+			$("img").fadeToggle("slow"); 
+		 });
+		 
+		 $("#to50").click(function(){
+			$("img").fadeTo("slow",0.5); 
+		 });
+		 
+		 $("#to10").click(function(){
+			$("img").fadeTo("slow",0.1); 
+		 });
+		 
+		 $("#to100").click(function(){
+			$("img").fadeTo("slow",1.0); 
+		 });
+         
+
+      });
+	
+</script>
+
+
+
+</head>
+<body>
+   <button id="out">fadeOut</button>
+   <button id="in">fadeIn</button>
+   <button id="toggle">toggle</button><br><br>
+   <button id="to50">opacity 50%</button><br><br>
+   <button id="to10">opacity 10%</button><br><br>
+   <button id="to100">opacity 100%</button><br><br>
+   <p></p>
+   <img src="../img/sul2.png" name="pic2" />
+</body>
+</html>
+
