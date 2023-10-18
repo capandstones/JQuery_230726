@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<script src="../script/jquery-3.7.1.min.js"></script>
+<script>
+	$(function(){
+		$("div.out").on("click", function(){
+			$("div.out").css("background-color","red");
+		});
+	});
+	
+	var n=0;
+	$(document).ready(function(){
+		$("div.out").mouseenter(function(){
+			$("p:first",this).text("마우스 포인터 들어옴");
+			$("p:last",this).text(++n);
+		});
+		//mouseleave : 마우스가 박스안을 벗어나면
+		$("div.out").mouseleave(function(){
+			$("p:first",this).text("마우스 포인터 나감");
+			$("p:last",this).text("최종 횟수 : "+n);
+		});
+		
+		//mousedown : 마우스를 down하면
+		$("div.out").mousedown(function(){
+			$("p:first",this).hide;
+			$("p:last").text("메세지 없음");
+		});
+		
+		//mouseup : 마우스를 up하면
+		$("div.out").mouseup(function(){
+			$("p:first").show;
+			$("p:last").text("최종 횟수 : "+n+"번");
+		});
+		
+		
+	});
+</script>
+ <style>
+      div.out {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #000000;
+        text-align: center;
+        background-color: yellow;
+      }
+    </style>
+</head>
+<body>
+	<div class="out">
+      <p>마우스 이벤트 구현</p>
+      <p>0</p>
+    </div>
+</body>
+</html>
+
